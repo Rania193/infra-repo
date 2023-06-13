@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "iap_access" {
     name        = "iap-access"
-    project     = "final-project"
+    project     = "final-project-389511"
     network     = google_compute_network.vpc_network.id
 
     direction = "INGRESS"
