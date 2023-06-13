@@ -22,7 +22,7 @@ spec:
             runAsUser: 0
       containers:
       - name: jenkins-ubuntu-slave
-        image: raniaf/jenkins_slave:v1
+        image: rania199/raniaf:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 22

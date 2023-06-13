@@ -1,9 +1,9 @@
-resource "google_container_cluster" "gke_cluster" {
+resource "google_container_cluster" "priv_gke" {
   name     = "priv-gke"
   location = "us-central1-a"
 
   remove_default_node_pool = true
-  initial_node_count       = 3
+  initial_node_count       = 2
 
 
   network = google_compute_network.vpc_network.id
@@ -34,7 +34,7 @@ resource "google_container_cluster" "gke_cluster" {
 resource "google_container_node_pool" "primary_nodes" {
   name       = "the-node-pool"
   location   = "us-central1"
-  cluster    = google_container_cluster.gke_cluster.id
+  cluster    = google_container_cluster.priv_gke.id
   node_count = 1
 
   node_config {
